@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: none;
+    }
+
+    div#output {
+      display: block;
+      background-color: black;
+      color: white;
+      height: 300px;
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body onload='startGame()'>
+
+  <button id='start'>Start</button>
+
+  <div id='character_creation_screen'>
+    <h1>Character Creation</h1>
+    <p>Choose your name: <input id='name' /></p>
+    <button id='submit_character'>Submit Character</button>
+  </div>
+
+  <div id='game_screen'>
+    <h1>Game</h1>
+    <p>Your character: <span id='character_name'></span></p>
+
+    <button id='attack'>Attack</button>
+    <button id='heal'>Heal</button>
+
+    <div id='output'></div>
+  </div>
+
+  <script>
+    var me = {
+      name: "",
+      health: 100,
+      attack: 3,
+      heals: 2
+    };
+    var startButton = document.getElementById("start");
+    var characterCreationScreen = document.getElementById("character_creation_screen");
+    var gameScreen = document.getElementById("game_screen");
+    var output = document.getElementById("output");
+
+    var characterNameInput = document.getElementById("name");
+    var submitCharacterButton = document.getElementById("submit_character");
+    var characterName = document.getElementById("character_name");
+
+    var attackButton = document.getElementById('attack');
+    var healButton = document.getElementById('heal');
+
+    function startGame() {
+      console.log("Game started");
+      startButton.addEventListener("click", displayCharacterScreen);
+      submitCharacterButton.addEventListener("click", submitCharacterScreen);
+      healButton.addEventListener("click", healPlayer);
+      attackButton.addEventListener("click", attackMonster);
+    }
+
+    function displayCharacterScreen() {
+      startButton.style.display = 'none';
+      characterCreationScreen.style.display = "block";
+    }
+
+    function submitCharacterScreen() {
+      me.name = characterNameInput.value;
+      createOutput("Character created");
+
+      characterName.innerText = me.name;
+
+      gameScreen.style.display = "block";
+      characterCreationScreen.style.display = "none";
+    }
+
+    var healPlayer = function() {
+      if(me.heals > 0) {
+        me.health += 10;
+        me.heals--;
+
+        createOutput("Healed for 10hp");
+      } else {
+        createOutput("No healsh remaining!");
+      }
+
+      console.log(me);
+    }
+
+    function attackMonster() {
+
+    }
+
+    function createOutput(text) {
+      output.innerHTML = output.innerHTML + "<p>" + text + "</p>";
+    }
+
+
+
+  </script>
+
+</body>
+</html>
