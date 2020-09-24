@@ -58,6 +58,18 @@
     var attackButton = document.getElementById('attack');
     var healButton = document.getElementById('heal');
 
+    fetch("https://www.dnd5eapi.co/api/monsters").then(function(monstersData) {
+        console.log("Monseter data: ", monstersData);
+        return monstersData.json();
+      }).then(function(monsters){
+        console.log("monsters", monsters);
+
+        monsters.results.forEach(function(monster){
+          console.error(monster.name);
+        });
+      });
+    }
+    
     function startGame() {
       console.log("Game started");
       startButton.addEventListener("click", displayCharacterScreen);
