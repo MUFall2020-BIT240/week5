@@ -17,8 +17,8 @@ We want to utilize the DOM and make the game more interactive
 
 We also want to display data about the game on the screen so
 	my ma' can play without using the console
-- Create a <p> for the players name and hp
-- Create a <p> for the current_enemies name and hp
+- Create a "<p>" for the players name and hp
+- Create a "<p>" for the current_enemies name and hp
 - Using javascript DOM, update the .innerText of those elements
 - At the end of the "skirmish" function, update the hp on 
 	the screen for both player and monster
