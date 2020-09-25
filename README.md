@@ -1,7 +1,7 @@
 # week5
 Building an interactive, HTML/JS based game!
 
-IN-CLASS GROUP WORK
+## IN-CLASS GROUP WORK
 We want to utilize the DOM and make the game more interactive
 - Create a "current_enemy" key in the game object
 - Populate that key with a random monster from your array (like we did above)
@@ -17,8 +17,17 @@ We want to utilize the DOM and make the game more interactive
 
 We also want to display data about the game on the screen so
 	my ma' can play without using the console
-- Create a "<p>" for the players name and hp
-- Create a "<p>" for the current_enemies name and hp
+- Create a paragraph tag for the players name and hp
+- Create a paragraph for the current_enemies name and hp
 - Using javascript DOM, update the .innerText of those elements
 - At the end of the "skirmish" function, update the hp on 
 	the screen for both player and monster
+
+## Homework
+
+- Add a value to your user object called "has_potion" and set the value to true
+- Add another button to the screen for 'drink potion'
+- When that button is clicked, call a function called 'drink potion'
+- In the function, set the "has_potion" key to false
+- Also, add 10hp to your user's current HP
+- If the game.user.has_potion is false, use an alert to let the user know that they don't have a potion to use.
