@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Week 5 - Adventure Game</title>
+	</head>
+	<body>
+		<h1>Adventure Time</h1>
+	
+		<script src="human.js"></script>
+		<script src="monsters.js"></script>
+		
+		
+		<script>
+			console.log(human);
+
+			var game = {
+				user: human,
+				monsters: listOfMonsters
+			}
+		
+			function generateRandomNumber(maxNumber) {
+				return Math.floor(   Math.random() * maxNumber  );
+			}
+			
+			var current_enemy_index = generateRandomNumber(game.monsters.length);
+			console.log(current_enemy_index);
+		
+			// 1. get the monsters array from the game object
+			// 2. using square bracket notation, get the monster we want
+			// 		with the random number we've generated
+			// 3. using dot notation, get the name of the monster
+		
+			var current_enemy = game.monsters[current_enemy_index].name;
+			console.log(current_enemy);
+		
+		
+			// IN-CLASS GROUP WORK
+			// We want to utilize the DOM and make the game more interactive
+			// - Create a "current_enemy" key in the game object
+			// - Populate that key with a random monster from your array (like we did above)
+			// - Add a button on the screen called "Attack" (give it an ID as well)
+			// - When that button is pressed (eventlistener), call a function named 
+			// 		"skirmish"
+			// - The skirmish function is going to subtrack our user's damage from 
+			//		the current enemy's hp
+			// - AND take the current_enemies attack from our HP
+			// - After doing both of those things, check to see if either our or the 
+			//		monsters HP is <= 0
+			// - If it is, use alert() to end the game
+			
+			// We also want to display data about the game on the screen so
+			//		my ma' can play without using the console
+			// - Create a <p> for the players name and hp
+			// - Create a <p> for the current_enemies name and hp
+			// - Using javascript DOM, update the .innerText of those elements
+			// - At the end of the "skirmish" function, update the hp on 
+			//		the screen for both player and monster
+		
+		</script>
+	</body>
+</html>
